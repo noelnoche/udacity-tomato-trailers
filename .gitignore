@@ -1,0 +1,5 @@
+*.DS_Store
+*.pyc
+.python-version
+_ignore
+__pycache__

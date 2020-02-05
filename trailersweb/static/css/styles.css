@@ -1,0 +1,172 @@
+html {
+  position: relative;
+  min-height: 100%;
+  font-size: 16px;
+}
+
+body {
+  padding-top: 5rem;
+  font-family: 'Helvetica';
+  background: #dcdcdc;
+  background-image: url("../assets/graphics/graphic_tomato-multi.png");
+}
+
+h1 {
+  color: #fff;
+  font-weight: bold;
+}
+
+h2 {
+  margin: 0.5rem;
+  color: #4c4c4c;
+  font-size: medium;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+a {
+  display: block;
+  color: #FFF;
+}
+
+.navbar-inverse {
+  margin-bottom: 0;
+  background-color: #390;
+  background-image: none;
+  border: none;
+  border-radius: 5px 5px 0 0;
+}
+
+.navbar-inverse .navbar-brand {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.modal-content {
+  display: table-cell;
+  vertical-align: middle;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+#trailer .modal-dialog {
+  display: table;
+  max-width: 40rem;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.close-btn {
+  position: relative;
+  z-index: 9001;
+  top: 1.5rem;
+  left: 100%;
+  height: 2.1875rem;
+  margin-left: -4.5rem;
+  padding: 0;
+  color: #fcfcfc;
+  font-size: 2.5rem;
+  line-height: 1;
+  background: none;
+  border: none;
+}
+
+#trailer-video {
+  height: 100%;
+  width: 100%;
+}
+
+.scale-media {
+  position: relative;
+  padding-bottom: 56.25%;
+}
+
+.scale-media iframe {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  border: none;
+}
+
+.movie-info {
+  padding: 1rem 2.5rem;
+  color: #fff;
+  font-weight: 300;
+  background: #000;
+  background-color: rgba(0,0,0,0.85)
+}
+
+.movie-tile {
+  margin-bottom: 0;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+  background-color: #fff;
+  border: 1px solid #dcdcdc;
+  transition: background-color 700ms
+}
+
+.movie-tile:hover {
+  cursor: pointer;
+  background-color: #999;
+  background-color: rgba(0,0,0,0.85);
+}
+
+.img-box {
+  height: 11.5rem;
+  width: 11.5rem;
+  margin: auto;
+  border: 0.5rem solid #390;
+  border-radius: 50%;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+}
+
+.img-box img {
+  width: 100%;
+}
+
+.navbar-pagination {
+  text-align: center;
+  background-color: #000;
+}
+
+.pagination li a {
+  color: #fff;
+  border: none;
+  background: none;
+  border-radius: 50% !important;
+}
+
+.pagination li a.current-page {
+  color: #000;
+  background-color: #eee;
+  border-color: #ddd;
+}
+
+.footer {
+  width: 100%;
+  color: #fff;
+  text-align: center;
+}
+
+.footer-content {
+  height: 100%;
+  max-width: 71.25rem;
+  width: 100%;
+  background-color: #390;
+  border-radius: 0 0 5px 5px;
+}
+
+.footer-content p {
+  display: inline-block;
+  margin: 0.625rem;
+}
