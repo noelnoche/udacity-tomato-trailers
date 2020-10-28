@@ -10,10 +10,15 @@ and a Google Custom Search Engine ID (cx):
         API_KEY = "Your Google Cloud API key"
         PLAYLIST_ID = "Your YouTube playlist ID"
         CSE_ID="Your Google Custom Search Engine ID"
+        LIMIT="Number of items shown at a time"
 """
 
 secret = dict(
     API_KEY = "xxx",
     PLAYLIST_ID = "xxx",
     CSE_ID = "xxx"
+)
+
+envar = dict(
+    LIMIT = 5
 )
