@@ -1,79 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <link rel="shortcut icon" href="https://lh3.googleusercontent.com/LgFbmGHjiarLHMRUDk017Q_u3KhJOcmGbLj12Nsz6nBjhYsgedXkF1tFweUw7HX8VuOLa8Xr4Ry8vfcU5qGwg9wx4UYhjQbkiAmwP-2j2EASiDvhZfehNbI2NqkzYtS48VxfUF15XA=s300-no">
 
-    <!-- Bootstrap 3.4.1 CSS and optional theme -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
-    
-    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/styles.css')}}">
-    <title>TrailersWeb</title>
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <link rel="shortcut icon"
+    href="https://lh3.googleusercontent.com/LgFbmGHjiarLHMRUDk017Q_u3KhJOcmGbLj12Nsz6nBjhYsgedXkF1tFweUw7HX8VuOLa8Xr4Ry8vfcU5qGwg9wx4UYhjQbkiAmwP-2j2EASiDvhZfehNbI2NqkzYtS48VxfUF15XA=s300-no">
 
-    <!-- Trailer video modal -->
-    <div class="modal" id="trailer" data-backdrop="static">
-      <button class="close-btn" role="button" aria-hidden="true" data-dismiss="modal" >⊠</button>
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="scale-media" id="trailer-video-container"></div>
-        </div>
+  <!-- Bootstrap 3.4.1 CSS and optional theme -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css"
+    integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/styles.css')}}">
+  <title>Tomato Trailers</title>
+</head>
+
+<body>
+
+  <!-- Trailer video modal -->
+  <div class="modal" id="trailer" data-backdrop="static">
+    <button class="close-btn" role="button" aria-hidden="true" data-dismiss="modal">⊠</button>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="scale-media" id="trailer-video-container"></div>
       </div>
     </div>
-    <!-- END: modal -->
+  </div>
+  <!-- END: modal -->
 
-    <div class="container">
-      <nav class="navbar navbar-inverse" role="navigation">
-        <div class="navbar-header">
-          <h1 class="navbar-brand">TrailersWeb</h1>
-        </div>
-      </nav>
-    </div>
+  <div class="container">
+    <nav class="navbar navbar-inverse" role="navigation">
+      <div class="navbar-header">
+        <h1 class="navbar-brand">Tomato Trailers</h1>
+      </div>
+    </nav>
+  </div>
 
-    <!-- Movie listing -->
-    <div class="container" role="main">
-      {{ movie_tiles | safe }}
-    </div>
+  <!-- Movie listing -->
+  <div class="container" role="main">
+    {{ movie_tiles | safe }}
+  </div>
 
-    <div class="container">
-      <nav class="navbar-pagination" role="navigation">
-          <ul class="pagination">
-            {% if prev_page != None %}
-              <li><a href="{{ url_for('bp_views.serve_page', page_num=prev_page) }}"><span aria-hidden="true">&laquo;</span></a></li>
-            {% endif %}
-    
-            {% for p in range(1, (total_pages + 1)) %}
-              {% if p == page_num %}
-                <li><a class="current-page" href="{{ url_for('bp_views.serve_page', page_num=p) }}">{{ p }}</a></li>
-              {% else %}
-                <li><a href="{{ url_for('bp_views.serve_page', page_num=p) }}">{{ p }}</a></li>
-              {% endif %}
-            {% endfor %}
-    
-            {% if next_page != None %}
-              <li><a href="{{ url_for('bp_views.serve_page', page_num=next_page) }}"><span aria-hidden="true">&raquo;</span></a></li>
-            {% endif %}
-          </ul>
-        </nav>
-    </div>
+  <div class="container">
+    <nav class="navbar-pagination" role="navigation">
+      <ul class="pagination">
+        {% if prev_page != None %}
+        <li><a href="{{ url_for('bp_views.serve_page', page_num=prev_page) }}"><span
+              aria-hidden="true">&laquo;</span></a></li>
+        {% endif %}
 
-    <div class="container">
-      <div class="footer">
-        <div class="footer-content">
-          <p><a href="hhttps://github.com/noelnoche/udacity-fsnd-movie-trailer-website">GitHub</a></p>
-          <p><a href="https://hellonoel.com">hellonoel.com</a></p>
-        </div>
+        {% for p in range(1, (total_pages + 1)) %}
+        {% if p == page_num %}
+        <li><a class="current-page" href="{{ url_for('bp_views.serve_page', page_num=p) }}">{{ p }}</a></li>
+        {% else %}
+        <li><a href="{{ url_for('bp_views.serve_page', page_num=p) }}">{{ p }}</a></li>
+        {% endif %}
+        {% endfor %}
+
+        {% if next_page != None %}
+        <li><a href="{{ url_for('bp_views.serve_page', page_num=next_page) }}"><span
+              aria-hidden="true">&raquo;</span></a></li>
+        {% endif %}
+      </ul>
+    </nav>
+  </div>
+
+  <div class="container">
+    <div class="footer">
+      <div class="footer-content">
+        <p><a href="hhttps://github.com/noelnoche/udacity-fsnd-movie-trailer-website">GitHub</a></p>
+        <p><a href="https://hellonoel.com">hellonoel.com</a></p>
       </div>
     </div>
+  </div>
 
 
-    <!-- jQuery 3.4.1, Bootstrap 3.4.1 JavaScript and client-side JavaScript code -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-    <script src="{{ url_for('static', filename='js/script.js')}}"></script>
-  </body>
+  <!-- jQuery 3.4.1, Bootstrap 3.4.1 JavaScript and client-side JavaScript code -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+    integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+    crossorigin="anonymous"></script>
+  <script src="{{ url_for('static', filename='js/script.js')}}"></script>
+</body>
+
 </html>
