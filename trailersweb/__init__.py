@@ -23,3 +23,6 @@ def create_app():
         cache.init_app(app)
 
     return app
+
+
+create_app()
