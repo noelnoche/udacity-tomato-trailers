@@ -288,29 +288,28 @@ def generate_page_data():
     """
     page_data = []
     page_token = None
-    timer = 0
     page_num = 1
+    done = False
 
-    while True:
-        playlist_data = call_youtube_api(page_token)
-        movies_array = process_youtube_data(playlist_data)
-        process_imdb_data(movies_array)
-        movie_tiles = create_movie_tiles(movies_array) 
-        page_data.append((page_num, movie_tiles))
-        time.sleep(0.5)
-        timer += 0.5
+    try:
+        while done == False:
+            playlist_data = call_youtube_api(page_token)
+            movies_array = process_youtube_data(playlist_data)
+            process_imdb_data(movies_array)
+            movie_tiles = create_movie_tiles(movies_array) 
+            page_data.append((page_num, movie_tiles))
 
-        if timer == 15.0:
-            msg = "Time limit exceeded for creating movie table data."
-            raise Exception("@generate_page_data -- {}".format())
-        elif "nextPageToken" in playlist_data:
-            page_token = playlist_data["nextPageToken"]
-            page_num += 1
-            continue
-        else:
-            break
-
-    return page_data
+            if "nextPageToken" in playlist_data:
+                page_token = playlist_data["nextPageToken"]
+                page_num += 1
+                continue
+            else:
+                done = True
+        
+        return page_data
+    except RuntimeError:
+        msg = "An error occurred when obtaining data for the database."
+        raise Exception("@generate_page_data -- {}".format(msg))
     
 
 def create_movies_db():
