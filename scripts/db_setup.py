@@ -77,7 +77,7 @@ def http_get_request(url):
 API_KEY = dev_config.secret["API_KEY"]
 PLAYLIST_ID = dev_config.secret["PLAYLIST_ID"]
 CSE_ID = dev_config.secret["CSE_ID"]
-
+LIMIT = dev_config.envar["LIMIT"]
 
 def call_youtube_api(page_token):
     """
@@ -87,15 +87,15 @@ def call_youtube_api(page_token):
         retruned from the API (for pagination).
     """
     url = ""
-
+    
     if page_token == None:
         url = ("https://www.googleapis.com/youtube/v3/playlistItems?part="
-            "snippet&maxResults=24&playlistId={}&key={}"
-            .format(PLAYLIST_ID, API_KEY))
+            "snippet&maxResults={}&playlistId={}&key={}"
+            .format(LIMIT, PLAYLIST_ID, API_KEY))
     else:
         url = ("https://www.googleapis.com/youtube/v3/playlistItems?part="
-            "snippet&maxResults=24&pageToken={}&playlistId={}"
-            "&key={}".format(page_token, PLAYLIST_ID, API_KEY))
+            "snippet&maxResults={}&pageToken={}&playlistId={}"
+            "&key={}".format(LIMIT, page_token, PLAYLIST_ID, API_KEY))
 
     playlist_data = http_get_request(url)
     
