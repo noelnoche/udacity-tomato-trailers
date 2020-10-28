@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 """
-This is the file that is invoked to start up a development server. 
-It gets a copy of the app from your package and runs it. This won’t be 
-used in production.
-
+This is the file that is invoked to start up the application. 
 """
 from trailersweb import app
 
