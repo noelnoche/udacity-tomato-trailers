@@ -15,7 +15,7 @@ def connect_db():
     try:
         conn = sqlite3.connect(db_path, uri=True)
         print("SQLite3 -- {}".format(sqlite3.version))
-    except Error as e:
+    except sqlite3.Error as e:
         msg = "@connect_db -- {}".format(e)
         print(msg)
     finally:
@@ -37,7 +37,7 @@ def query_movie_data(conn=None, page_num=1):
         rows = c.fetchall()
         return rows[0][0]
 
-    except Error as e:
+    except sqlite3.Error as e:
         msg = "@read_movie_table -- {}".format(e)
         print(msg)
 
@@ -55,6 +55,6 @@ def query_total_pages(conn=None):
         rows = c.fetchall()
         return rows[0][0]
 
-    except Error as e:
+    except sqlite3.Error as e:
         msg = "@query_total_pages -- {}".format(e)
         print(msg)  
