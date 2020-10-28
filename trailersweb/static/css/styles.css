@@ -109,25 +109,23 @@ a {
   padding-bottom: 1rem;
   background-color: #fff;
   border: 1px solid #dcdcdc;
-  transition: background-color 700ms
-}
-
-.movie-tile:hover {
-  cursor: pointer;
-  background-color: #999;
-  background-color: rgba(0,0,0,0.85);
 }
 
 .img-box {
   height: 11.5rem;
   width: 11.5rem;
   margin: auto;
-  border: 0.5rem solid #390;
+  border: 0.2rem solid #390;
   border-radius: 50%;
   overflow: hidden;
   -webkit-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
   box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+  transition: all 150ms ease-in;
+}
+
+.img-box:hover {
+  border: 0.5rem solid #ff6347;
 }
 
 .img-box img {
