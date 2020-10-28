@@ -5,9 +5,8 @@ It gets a copy of the app from your package and runs it. This won’t be
 used in production.
 
 """
-from trailersweb import create_app
+from trailersweb import app
 
 
 if __name__ == "__main__":
-    app = create_app()
     app.run()
