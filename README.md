@@ -15,8 +15,9 @@ Demo
 <https://youtu.be/ZCxMWQulf_g>
 
 
-Requirements
+Development
 ---
+**Requirements**
 This project makes use of Google Cloud's YouTube Data and Custom Search API. 
 The virtual environment application Pyenv was used in the development of this 
 application. Once set up, you can install the required packages from the 
@@ -24,9 +25,7 @@ requirements.txt file:
 
         `$ pip install -r  requirements.txt`
 
-
-Getting the API key & enabling it
----
+**Getting the API key & enabling it**
 1. Log into your Google Cloud Platform console.
 2. Click: "Navigation menu" -> "APIs & Services" -> "Library" -> "YouTube Data API v3"
 3. Enable the API.
@@ -37,9 +36,7 @@ Getting the API key & enabling it
 8. Restrict the key to "Custom Search API" and "YouTube Data API v(3)."
 9. Click "Save."
 
-
-Setup and get CSE key
----
+**Setup and get CSE key**
 1. Log into your [Google Custom Search Engine console](https://cse.google.com/cse/)
 2. Click "New search engine"
 3. Under "Sites to search" enter `https://www.imdb.com/title/*`
@@ -51,9 +48,7 @@ Setup and get CSE key
     + Region and language: United States and English
     + Search entire web: OFF
 
-
-Make playlist and get ID
----
+**Make playlist and get ID**
 1. Log into your YouTube account.
 2. Find a movie trailer (or any video) you like.
 3. Click: "Add to" -> "Create new playlist"
@@ -63,9 +58,7 @@ Make playlist and get ID
 7. Click the playlist you just created.
 8. The playlist id is in the url after the `list` flag.
 
-
-Running the application (development)
----
+**Running the application**
 1. Open the /scripts/dev_config.py in a text editor and provide the values.
 2. Open Terminal in the application root directory.
 3. `python scripts/db_setup.py` (Creates a new movies database in trailersweb directory)
@@ -75,7 +68,7 @@ Running the application (development)
 7. Open browser: `localhost:5000/trailersweb`
 
 
-Credits
+Attribution
 ---
 Trailers are taken from [YouTube Movies](https://www.youtube.com/movies)
 
@@ -83,12 +76,3 @@ Trailers are taken from [YouTube Movies](https://www.youtube.com/movies)
 License
 ---
 Code provided under an [MIT license](https://github.com/noelnoche/udacity-tomato-trailers/blob/main/LICENSE.md)
-
-
-Reference
----
-+ [Pyenv](https://github.com/pyenv/pyenv)
-+ [Getting Started with YouTube Data API](https://developers.google.com/youtube/v3/getting-started)
-+ [Creating a Google Custom Search Engine](https://developers.google.com/custom-search/json-api/v1/introduction)
-+ [Flask](http://flask.palletsprojects.com/en/1.1.x/)
-+ [sqlite3](https://docs.python.org/3/library/sqlite3.html)
