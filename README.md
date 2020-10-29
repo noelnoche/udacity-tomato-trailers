@@ -4,10 +4,10 @@ Tomato Trailers
 
 Description
 ---
-This project makes use of Google's YouTube Data API and CustomSearch API to 
-obtain the movie data based on a YouTube playlist created by the user, store 
-results in a database and serve the results from a webpage served on the Flask 
-web framework.
+Tomato Trailers takes a YouTube movie trailer playlist and generates a webpage 
+that showcases the videos with added information like a synopsis, cast and link 
+to IMDb. It uses Google's YouTube Data API and CustomSearch API to 
+obtain the movie data based and stores results in a local database.
 
 
 Demo
