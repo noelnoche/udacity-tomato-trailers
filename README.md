@@ -1,4 +1,4 @@
-Movie Trailer Website
+Tomato Trailers
 ===
 
 
@@ -10,9 +10,9 @@ results in a database and serve the results from a webpage served on the Flask
 web framework.
 
 
-App Link
+Demo
 ---
-
+<https://youtu.be/ZCxMWQulf_g>
 
 
 Requirements
@@ -82,7 +82,7 @@ Trailers are taken from [YouTube Movies](https://www.youtube.com/movies)
 
 License
 ---
-Code provided under an [MIT license](https://github.com/noelnoche/udacity-fsnd-movie-trailer-website/blob/gh-pages/LICENSE.md)
+Code provided under an [MIT license](https://github.com/noelnoche/udacity-tomato-trailers/blob/main/LICENSE.md)
 
 
 Reference
