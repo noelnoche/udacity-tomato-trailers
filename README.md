@@ -13,7 +13,7 @@ obtain the movie data based and stores results in a local database.
 Demo + Link
 ---
 <https://youtu.be/ZCxMWQulf_g>  
-<https://ncom2.herokuapp.com/trailersweb/index.html>
+<https://ncom2.herokuapp.com/trailersweb/>
 
 
 Development
